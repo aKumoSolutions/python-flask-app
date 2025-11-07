@@ -24,6 +24,8 @@ ENV PYTHONUNBUFFERED=1
 
 WORKDIR /app
 
+RUN python -m pip install -r requirements.txt
+
 RUN adduser \
     --disabled-password \
     --home "/nonexistent" \
@@ -35,8 +37,6 @@ RUN adduser \
 USER pythonuser
 
 COPY . .
-
-RUN python -m pip install -r requirements.txt
 
 EXPOSE 8000
 
