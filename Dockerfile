@@ -24,6 +24,8 @@ ENV PYTHONUNBUFFERED=1
 
 WORKDIR /app
 
+COPY . .
+
 RUN python -m pip install -r requirements.txt
 
 RUN adduser \
@@ -35,8 +37,6 @@ RUN adduser \
     pythonuser
 
 USER pythonuser
-
-COPY . .
 
 EXPOSE 8000
 
